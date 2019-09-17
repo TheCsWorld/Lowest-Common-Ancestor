@@ -57,5 +57,28 @@ public class LCATest {
 		System.out.println("Test 3b LCA(4, 6): " + tree.findLCA(4,6)); 
 		System.out.println("Test 3c LCA(8, 4): " + tree.findLCA(8,4)); 
 	}
+	
+	@Test
+	public void test4() {
+		LCA tree = new LCA(); 
+		tree.root = new Node(1); 
+		tree.root.left = new Node(2); 
+		tree.root.right = new Node(3); 
+		tree.root.left.left = new Node(4); 
+		tree.root.left.right = new Node(5); 
+		tree.root.right.left = new Node(6); 
+		tree.root.right.right = new Node(7); 
+		tree.root.right.right.right = new Node(8);
+		tree.root.right.right.left = new Node(9);
+		tree.root.right.left.right = new Node(10);
+		tree.root.right.left.left = new Node(11);
+		tree.root.right.right.right.right = new Node(12);
+		tree.root.left.left.left = new Node(13);
 
+		System.out.println("Test 4a LCA(4, 5): " + tree.findLCA(4,5)); 
+		System.out.println("Test 4b LCA(4, 11): " + tree.findLCA(4,11));  
+		System.out.println("Test 4c LCA(12, 7): " + tree.findLCA(12,7)); 
+		System.out.println("Test 4d LCA(13, 9): " + tree.findLCA(13,9)); 
+		System.out.println("Test 4e LCA(5, 13): " + tree.findLCA(5,13)); 		
+	} 
 }
