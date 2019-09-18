@@ -8,9 +8,7 @@ public class LCATest {
 	public void test0() {
 		LCA tree = new LCA(); 
 		
-		System.out.println("Test 0 LCA(4, 5): " + tree.findLCA(4,5)); 
-		System.out.println("Test 0 LCA(4, 6): " + tree.findLCA(4,6)); 
-		System.out.println("Test 0 LCA(8, 4): " + tree.findLCA(8,4)); 
+		assertEquals("Empty tree test", -1, tree.findLCA(4,5)); 
 	}
 
 	@Test
@@ -22,12 +20,16 @@ public class LCATest {
 		tree.root.left.left = new Node(4); 
 		tree.root.left.right = new Node(5); 
 		tree.root.right.left = new Node(6); 
-		tree.root.right.right = new Node(7); 
+		tree.root.right.right = new Node(7);  
 
-		System.out.println("Test 1a LCA(4, 5): " + tree.findLCA(4,5)); 
-		System.out.println("Test 1b LCA(4, 9): " + tree.findLCA(4,9));  
-		System.out.println("Test 1c LCA(8, 7): " + tree.findLCA(8,7)); 
-		System.out.println("Test 1d LCA(8, 9): " + tree.findLCA(8,9)); 		
+		//System.out.println("Test 1a LCA(4, 5): " + tree.findLCA(4,5)); 
+		assertEquals("Test 1a LCA(4,5):", 2, tree.findLCA(4,5));
+		//System.out.println("Test 1b LCA(4, 9): " + tree.findLCA(4,9)); 
+		assertEquals("Test 1b, Missing node", -1, tree.findLCA(4,9));   
+		//System.out.println("Test 1c LCA(8, 7): " + tree.findLCA(8,7));
+		assertEquals("Test 1c, Missing node", -1, tree.findLCA(8,7)); 
+		//System.out.println("Test 1d LCA(8, 9): " + tree.findLCA(8,9)); 	
+		assertEquals("Test 1d LCA(8,9) missing Nodes", -1, tree.findLCA(8,9));
 	}
 	
 	@Test
@@ -40,6 +42,7 @@ public class LCATest {
 		tree.root.left.left.left.left= new Node(5); 
 
 		System.out.println("Test 2a LCA(4, 5): " + tree.findLCA(4,5)); 
+//		assertEquals("Test 2a LCA(4,5)", )
 		System.out.println("Test 2b LCA(4, 6): " + tree.findLCA(4,6)); 
 		System.out.println("Test 2c LCA(8, 4): " + tree.findLCA(8,4)); 
 	}
@@ -53,9 +56,9 @@ public class LCATest {
 		tree.root.right.right.right = new Node(4);
 		tree.root.right.right.right.right= new Node(5); 
 
-		System.out.println("Test 3a LCA(4, 5): " + tree.findLCA(4,5)); 
-		System.out.println("Test 3b LCA(4, 6): " + tree.findLCA(4,6)); 
-		System.out.println("Test 3c LCA(8, 4): " + tree.findLCA(8,4)); 
+//		System.out.println("Test 3a LCA(4, 5): " + tree.findLCA(4,5)); 
+//		System.out.println("Test 3b LCA(4, 6): " + tree.findLCA(4,6)); 
+//		System.out.println("Test 3c LCA(8, 4): " + tree.findLCA(8,4)); 
 	}
 	
 	@Test
@@ -75,10 +78,10 @@ public class LCATest {
 		tree.root.right.right.right.right = new Node(12);
 		tree.root.left.left.left = new Node(13);
 
-		System.out.println("Test 4a LCA(4, 5): " + tree.findLCA(4,5)); 
-		System.out.println("Test 4b LCA(4, 11): " + tree.findLCA(4,11));  
-		System.out.println("Test 4c LCA(12, 7): " + tree.findLCA(12,7)); 
-		System.out.println("Test 4d LCA(13, 9): " + tree.findLCA(13,9)); 
-		System.out.println("Test 4e LCA(5, 13): " + tree.findLCA(5,13)); 		
+//		System.out.println("Test 4a LCA(4, 5): " + tree.findLCA(4,5)); 
+//		System.out.println("Test 4b LCA(4, 11): " + tree.findLCA(4,11));  
+//		System.out.println("Test 4c LCA(12, 7): " + tree.findLCA(12,7)); 
+//		System.out.println("Test 4d LCA(13, 9): " + tree.findLCA(13,9)); 
+//		System.out.println("Test 4e LCA(5, 13): " + tree.findLCA(5,13)); 		
 	} 
 }
