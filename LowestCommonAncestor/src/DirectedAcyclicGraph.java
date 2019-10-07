@@ -34,7 +34,7 @@ public boolean addEdge(int v, int w)
 	// acyclic -> If will not create a cycle -> add edge
 	// 1. not self loop
 	// 2. !hasPath w -> v
-	if(v >= this.V || w >= this.V || v < 0 || w < 0){
+	if(v >= this.V || w >= this.V || v < 0 || w < 0){ 
 		return false;
 	}
 	

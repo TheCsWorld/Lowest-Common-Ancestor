@@ -1,5 +1,7 @@
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.Test;
 
 public class LCATest {
@@ -109,8 +111,27 @@ public class LCATest {
 		
 		assertEquals("Test edge from non-existing vertices.", false, tree.addEdge(5, 4));
 		assertEquals("Test edge from non-existing vertices.", false, tree.addEdge(89, 53));
-		assertEquals("Test edge from negative vertices.", false, tree.addEdge(-2, -4)); 
+		assertEquals("Test edge from negative vertices.", false, tree.addEdge(-2, -4));
+				
+	}
+	@Test
+	public void test6(){
+		DirectedAcyclicGraph tree = new DirectedAcyclicGraph(5);
 		
+		tree.addEdge(0, 1);
+		tree.addEdge(0, 2);
+		tree.addEdge(2, 3);
+		tree.addEdge(3, 4);
+		
+		ArrayList<Integer> expectedResult = new ArrayList<Integer>();
+		expectedResult.add(0);
+				
+		assertTrue("Testing single lca return", tree.lowestCommonAncestor(4,1).size() == expectedResult.size());
+		for(int i : expectedResult){
+			assertTrue("Testing single lca return", tree.lowestCommonAncestor(4,1).contains(i));
+		}
+		
+
 	}
 	
 }
