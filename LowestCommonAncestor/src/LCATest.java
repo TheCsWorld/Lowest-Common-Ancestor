@@ -98,7 +98,18 @@ public class LCATest {
 	
 	@Test
 	public void test5() {
-		LCA tree = new LCA(); 
+		DirectedAcyclicGraph tree = new DirectedAcyclicGraph(3); 
+		
+		assertEquals("Test for self-loop", false, tree.addEdge(0, 0));
+		
+		assertEquals("Test edge.", true, tree.addEdge(0, 1));
+		assertEquals("Test edge.", true, tree.addEdge(1, 2));
+		
+		assertEquals("Test edge that would cause cycle.", false, tree.addEdge(2, 0));
+		
+		assertEquals("Test edge from non-existing vertices.", false, tree.addEdge(5, 4));
+		assertEquals("Test edge from non-existing vertices.", false, tree.addEdge(89, 53));
+		assertEquals("Test edge from negative vertices.", false, tree.addEdge(-2, -4)); 
 		
 	}
 	
