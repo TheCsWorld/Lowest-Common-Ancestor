@@ -95,4 +95,11 @@ public class LCATest {
 //		System.out.println("Test 4e LCA(5, 13): " + tree.findLCA(5,13)); 
 		assertEquals("Test 4e LCA(5,13)", 2, tree.findLCA(5, 13));
 	} 
+	
+	@Test
+	public void test5() {
+		LCA tree = new LCA(); 
+		
+	}
+	
 }
