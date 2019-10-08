@@ -102,16 +102,16 @@ public class LCATest {
 	public void test5() {
 		DirectedAcyclicGraph tree = new DirectedAcyclicGraph(3); 
 		
-		assertEquals("Test for self-loop", false, tree.addEdge(0, 0));
+		assertEquals("Test 5a self-loop", false, tree.addEdge(0, 0));
 		
-		assertEquals("Test edge.", true, tree.addEdge(0, 1));
-		assertEquals("Test edge.", true, tree.addEdge(1, 2));
+		assertEquals("Test 5b add edge.", true, tree.addEdge(0, 1));
+		assertEquals("Test 5c add edge.", true, tree.addEdge(1, 2));
 		
-		assertEquals("Test edge that would cause cycle.", false, tree.addEdge(2, 0));
+		assertEquals("Test 5d edge that would cause cycle.", false, tree.addEdge(2, 0));
 		
-		assertEquals("Test edge from non-existing vertices.", false, tree.addEdge(5, 4));
-		assertEquals("Test edge from non-existing vertices.", false, tree.addEdge(89, 53));
-		assertEquals("Test edge from negative vertices.", false, tree.addEdge(-2, -4));
+		assertEquals("Test 5e edge from non-existing vertices.", false, tree.addEdge(5, 4));
+		assertEquals("Test 5f edge from non-existing vertices.", false, tree.addEdge(89, 53));
+		assertEquals("Test 5g  edge from negative vertices.", false, tree.addEdge(-2, -4));
 				
 	}
 	@Test
@@ -126,9 +126,9 @@ public class LCATest {
 		ArrayList<Integer> expectedResult = new ArrayList<Integer>();
 		expectedResult.add(0);
 				
-		assertTrue("Testing single lca return", tree.lowestCommonAncestor(4,1).size() == expectedResult.size());
+		assertTrue("Testing 6a single lca return", tree.lowestCommonAncestor(4,1).size() == expectedResult.size());
 		for(int i : expectedResult){
-			assertTrue("Testing single lca return", tree.lowestCommonAncestor(4,1).contains(i));
+			assertTrue("Testing 6b single lca return", tree.lowestCommonAncestor(4,1).contains(i));
 		}
 		
 
