@@ -127,11 +127,34 @@ public class LCATest {
 		expectedResult.add(0);
 				
 		assertTrue("Testing 6a single lca return", tree.lowestCommonAncestor(4,1).size() == expectedResult.size());
-		for(int i : expectedResult){
-			assertTrue("Testing 6b single lca return", tree.lowestCommonAncestor(4,1).contains(i));
+		for(int i=0; i<expectedResult.size();i++){
+			assertTrue("Testing 6a single lca return", tree.lowestCommonAncestor(4,1).contains(i));
 		}
 		
 
 	}
+	@Test
+	public void test7(){
+		DirectedAcyclicGraph tree = new DirectedAcyclicGraph(7);
+
+		tree.addEdge(0, 3);			
+		tree.addEdge(1, 3);
+		tree.addEdge(1, 4);
+		tree.addEdge(2, 5);
+		tree.addEdge(2, 6);
+		tree.addEdge(3, 5);
+		tree.addEdge(3, 6);
+		tree.addEdge(4, 6);
+		
+		ArrayList<Integer> expectedResult = new ArrayList<Integer>();
+		expectedResult.clear();
+		expectedResult.add(2);
+		expectedResult.add(3);
+				
+		assertTrue("Testing 7a mutliple lca return", tree.lowestCommonAncestor(5,6).size() == expectedResult.size());
+		for(int i=0;i<expectedResult.size();i++){
+			assertTrue("Testing 7a mutliple lca return", tree.lowestCommonAncestor(5,6).contains(i));
+		}
+		}
 	
 }
