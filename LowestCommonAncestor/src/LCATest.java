@@ -152,4 +152,15 @@ public class LCATest {
 		}
 	}
 	
+	@Test
+	public void test9() {
+		LCA tree = new LCA(); 
+		tree.root = new Node(1); 
+		assertEquals("Test 9a, Missing node", -1, tree.findLCA(1,9));  
+		tree.root.left = new Node(2); 
+		assertEquals("Test 9b", 1, tree.findLCA(1,2));
+		tree.root.right = new Node(3);
+		assertEquals("Test 9c", 1, tree.findLCA(2,3));
+	}
+	
 }
